@@ -91,6 +91,8 @@ function install_marathon {
 
 function install_docker_compose {
   pip install docker-compose
+  pip install nvidia-docker-compose
+  python -m pip install jinja2
 }
 
 function get_pom_version {

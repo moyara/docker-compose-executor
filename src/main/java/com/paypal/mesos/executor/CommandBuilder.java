@@ -8,17 +8,17 @@ import java.util.List;
 public class CommandBuilder {
 
     public static String launchTask(List<String> files) {
-        StringBuffer buf = new StringBuffer("docker-compose ");
+        StringBuffer buf = new StringBuffer("nvidia-docker-compose ");
         for (String file : files) {
             buf.append(" -f " + file);
         }
         buf.append(" up");
         return buf.toString();
-        //return "docker-compose -f "+fileName+" up";
+        //return "nvidia-docker-compose -f "+fileName+" up";
     }
 
     public static String pullImages(List<String> files) {
-        StringBuffer buf = new StringBuffer("docker-compose ");
+        StringBuffer buf = new StringBuffer("nvidia-docker-compose ");
         for (String file : files) {
             buf.append(" -f " + file);
         }
@@ -29,7 +29,7 @@ public class CommandBuilder {
         }
         return buf.toString();
 
-//		String command = "docker-compose -f "+fileName+" pull";
+//		String command = "nvidia-docker-compose -f "+fileName+" pull";
 //		if(Config.IGNORE_PULL_FAILURES){
 //			command = command+"  --ignore-pull-failures";
 //		}
@@ -37,23 +37,23 @@ public class CommandBuilder {
     }
 
     public static String stopTask(List<String> files) {
-        StringBuffer buf = new StringBuffer("docker-compose ");
+        StringBuffer buf = new StringBuffer("nvidia-docker-compose ");
         for (String file : files) {
             buf.append(" -f " + file);
         }
         buf.append(" stop");
         return buf.toString();
-        //return "docker-compose -f "+fileName+" stop ";
+        //return "nvidia-docker-compose -f "+fileName+" stop ";
     }
 
     public static String getContainerIds(List<String> files) {
-        StringBuffer buf = new StringBuffer("docker-compose ");
+        StringBuffer buf = new StringBuffer("nvidia-docker-compose ");
         for (String file : files) {
             buf.append(" -f " + file);
         }
         buf.append(" ps -q");
         return buf.toString();
-        //return "docker-compose -f "+fileName + " ps -q";
+        //return "nvidia-docker-compose -f "+fileName + " ps -q";
     }
 
     public static String linuxKill(List<Integer> pids) {

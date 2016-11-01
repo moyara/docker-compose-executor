@@ -98,6 +98,8 @@ function install_mesos {
 
 function install_marathon {
   sudo pip install docker-compose
+  sudo pip install nvidia-docker-compose
+  sudo python -m pip install jinja2
   sudo dpkg --purge marathon
   wget -c https://dl.dropboxusercontent.com/u/26009359/marathon_0.11.1-1.0.432.ubuntu1404_amd64.deb
   sudo dpkg --install  marathon_0.11.1-1.0.432.ubuntu1404_amd64.deb
